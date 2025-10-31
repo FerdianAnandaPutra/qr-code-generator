@@ -65,9 +65,13 @@ while (($line = fgetcsv($file)) !== false) {
 
         imagecopyresampled(
             $QR_resized, $logo,
-            $from_width, $from_height, 0, 0,
-            $logo_qr_width, $logo_qr_height, 
-            $logo_width, $logo_height
+            (int) round($from_width),       
+            (int) round($from_height),     
+            0, 0,                           
+            (int) round($logo_qr_width),    
+            (int) round($logo_qr_height),   
+            (int) $logo_width,              
+            (int) $logo_height              
         );
 
         imagedestroy($logo);
